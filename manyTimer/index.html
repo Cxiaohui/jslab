@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Many Timer Test</title>
+    <script src="many-timer.js" type="text/javascript"></script>
+</head>
+<body>
+<pre>
+
+    设计一个定时器，描述，能设置多段执行频率
+    如：当计数器在[1,50]内每N秒执行
+    [51,100]内每M秒执行
+    ......
+    以此类推
+
+    配置数据如：
+    var options = {
+        "timers":[
+            {"name":"timer1","range":[1,10],"step":1000,"do_func":function(counter){
+                console.log('timer1:'+counter);
+            } }   ,
+            {"name":"timer2","range":[11,20],"step":2000,"do_func":function(counter){
+                console.log('timer2:'+counter);
+            } },
+            {"name":"timer3","range":[21,30],"step":3000,"do_func":function(counter){
+                console.log('timer3:'+counter);
+            } }
+        ],
+        "shutdownCounter":31
+
+    };
+</pre>
+<script type="text/javascript">
+    var options = {
+        "timers":[
+            {"name":"timer1","range":[1,10],"step":1000,"do_func":function(){
+                console.log('timer1:');
+            } }   ,
+            {"name":"timer2","range":[11,20],"step":2000,"do_func":function(){
+                console.log('timer2:');
+            } },
+            {"name":"timer3","range":[21,30],"step":3000,"do_func":function(){
+                console.log('timer3:');
+            } }
+        ],
+        "shutdownCounter":31
+
+    };
+
+
+    manyTimers.init(options);
+</script>
+</body>
+</html>
